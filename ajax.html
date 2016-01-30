@@ -69,7 +69,7 @@
 		style="
 			margin: 10px 10px 10px 10px;
 			border: 1px solid darkcyan;
-			color: greenyellow;
+			color: limegreen;
 			padding: 20px;
 		"
 	>
@@ -97,10 +97,13 @@
 	<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
     async defer></script>
     <script>
-		function initButtonName() {
-		  var getCommodityButton = document.getElementById('getCommodityButton');
-		  getCommodityButton.value = "Use Tradingeconomics to get Commodities Data !"
-		  getCommodityButton.style.width = '400px';
+		function initButtonName(response) {
+			console.log(response);
+			// this is a type of hack called as callback which can be used to avoid cross-origin CORS 
+			// so we instruct api here to not send json but to call .js function that we response as arguments.
+			var getCommodityButton = document.getElementById('getCommodityButton');
+			getCommodityButton.value = "Use Tradingeconomics to get Commodities Data !"
+			getCommodityButton.style.width = '400px';
 		}
 	</script>
 	<script src="https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json&callback=initButtonName"
