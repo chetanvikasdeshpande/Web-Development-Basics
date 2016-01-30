@@ -1,0 +1,196 @@
+<html>
+<head>
+	<title>This is a basic example</title>
+</head>
+<body>
+	<hr />
+	<h1>
+		HTML
+	</h1>
+	<h2>
+		HYPERTEXT MARKUP LANGUAGE
+	</h2>
+	<h3>
+		It is a set of markup tags. html is a whole document. meta data about content is in head tag eg. title.content is shown under body tag.
+	</h3>
+	<hr />
+	<h1>
+		BR tag is line break. It add space or like 2-3 newline character use it as < br />
+		<br />
+	</h1>
+	<hr />
+	<h1>
+		HR tag is horizontal rule. It adds horizontal line. use it as < hr />
+		<hr />
+	</h1>
+	<hr />
+	<h3>
+		Doctype helps declare a document type and it helps browser to render page correctly. Following are various doctypes. doctype tag does not have a closing tag.
+	</h3>
+	<h4>
+		html ==> for html5 used as < !DOCTYPE HTML >
+	</h4>
+	<hr />
+	<h2>
+		< !-- this is a comment text -->
+	</h2>
+	<hr />
+	<h2>
+		< HEAD > has < title > and < meta > as important tags < meta charset="UTF-8" > < /meta >
+	</h2>
+	<hr />
+	<h3>
+		HEADING ARE FROM H1 TO H6
+	</h3>
+	<ul>
+		<li>
+			<h1>this is h1</h1>
+		</li>
+		<li>
+			<h2>this is h2</h2>
+		</li>
+		<li>
+			<h3>this is h3</h3>
+		</li>
+		<li>
+			<h4>this is h4</h4>
+		</li>
+		<li>
+			<h5>this is h5</h5>
+		</li>
+		<li>
+			<h6>this is h6</h6>
+		</li>
+	</ul>
+	<hr />
+	<p> 
+	we use p tag for paragraph
+	</p>
+	<hr />
+	<a target="_blank" href="http://www.google.com">
+		this is a link displayed using a tag and href attribute to navigate to google.com
+	</a>
+	<hr />
+	<h2>
+		IMG tag is used display images with attributes such as SRC aka source, ALT aka alternate text, WIDTH and HEIGHT
+	</h2>
+	<img src="img.jpg" width="800" height="400" alt="this is world map" />
+	<hr />
+	<h1>
+		HTML ATTRIBUTES
+	</h1>
+	<h3>
+		we use them as attrbname = "value" inside a tag after tag name eg. < p title="hello"> < /p > where title is an attribute with hello as value
+	</h3>
+	<ul>
+		<li>
+			<h3>
+				lang is attribute of html tag eg. < html lang="en-US" >
+			</h3>
+		</li>
+		<li>
+			<h3 title="this is example of title">
+				hover on this text to see title aka tooltip.
+			</h3>
+		</li>
+		<li>
+			<h3>
+				WIDTH, HEIGHT, SRC and HREF are some other attributes. ALT is for alternate text if image does not appear.
+			</h3>
+		</li>
+		<li>
+			<h3>
+				style attribute <span style="align:center;color:blue;"> style="align:center;color:blue;"</span>
+			</h3>
+		</li>
+		<li>
+			<p><b>
+				this is example of ID. eg < div id="ex" > test </ div >. now we can use document.getElementById('ex') to edit div content eg. using document.getElementById('ex').innerHTML="yolo"
+			</b></p>
+		</li>
+		<li>
+			<input size="100" type="text" value="this is example of disabled textfield. just put disabled at the end of tag :D" disabled> 
+			we use <b><span style="color:blue;">SIZE</span></b> attribute to specify the length of input type.
+		</li>
+	</ul>
+	<h3>
+		Always use lowecase and "double quotes" for value of attributes
+	</h3>
+	<hr />
+	<h3 style="text-align:center;background:gray;font-size:110%;font-family:verdana">
+		the p tag defines paragraph but it removes all the formatting and treat all space as 1 space.
+		the PRE tag solves this problem.
+		<pre style="background:green">
+			yolo. mfs.
+			what ya  say                  !!!
+			this is called solution to poem problem in html.
+			this is also an example for style.
+				color, background, font-family, font-size, text-align are few common styles.
+				separate style using semicolon;
+		</pre>
+	</h3>
+	<hr />
+	<h1>
+		we will cover formatting using some tags like b, em, strong etc.
+	</h1>
+	<ul>
+		<li>
+			<p>
+				< b > <b> this text is bold </b> < /b >
+			</p>
+		</li>
+		<li>
+			<p>
+				< strong > <strong> this text is strong </strong> < /strong >
+			</p>
+		</li>
+		<li>
+			<p>
+				< i > <i> this text is italic </i> < /i >
+			</p>
+		</li>
+		<li>
+			<p>
+				< em > <em> this text is emphasized </em> < /em >
+			</p>
+		</li>
+		<li>
+			<h3>
+				Browsers display < strong > as < b >, and < em > as < i >. However, there is a difference in the meaning of these tags: < b > and < i > defines bold and italic text, but < strong > and < em > means that the text is "important".
+			</h3>
+		</li>
+		<li>
+			<p>
+				< small > <small> this text is small. </small> < /small >
+			</p>
+		</li>
+		<li>
+			<p>
+				< mark > <mark> this text is marked </mark> < /mark >
+			</p>
+		</li>
+		<li>
+			<p>
+				< del > <del> this text is deleted using del tag </del> < /del >
+			</p>
+		</li>
+		<li>
+			<p>
+				< ins > this text is <ins> inserted.</ins> < /ins >
+			</p>
+		</li>
+		<li>
+			<p>
+				this is example of < sub > <sub> subscript </sub> < /sub >
+			</p>
+		</li>
+		<li>
+			<p>
+				this is example of < sup > <sup> superscript </sup> < /sup >
+			</p>
+		</li>
+	</ul>
+	<hr />
+	
+</body>
+</html>
