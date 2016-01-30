@@ -4,6 +4,15 @@
 	<title>
 		Streetview, Google Maps, Ajax, Tradingeconomics !!!
 	</title>
+	<style type="text/css">
+		body {
+			background: url("https://codecademy-content.s3.amazonaws.com/courses/web-beginner-en-3pc6w/images/splash.jpg");
+			background-size: cover;
+		}
+		.whitebgclass {
+			background: white;
+		}
+	</style>
 	<script type="text/javascript">
 		function getCommoditiesData () {
 			var xhr = new XMLHttpRequest();
@@ -41,10 +50,11 @@
 		    color: #fff;
 		" 
 		type="button" 
+		id="getCommodityButton" 
 		value="Get Commodities Data !" 
 		onclick="getCommoditiesData()"
 	>
-	<div 
+	<div class="whitebgclass" 
 		id="commoditydiv" 
 		style="
 			margin: 10px 10px 10px 10px;
@@ -54,7 +64,7 @@
 		"
 	>
 	</div>
-	<div 
+	<div class="whitebgclass" 
 		id="datastatusdiv" 
 		style="
 			margin: 10px 10px 10px 10px;
@@ -85,6 +95,15 @@
 		}
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+    async defer></script>
+    <script>
+		function initButtonName() {
+		  var getCommodityButton = document.getElementById('getCommodityButton');
+		  getCommodityButton.value = "Use Tradingeconomics to get Commodities Data !"
+		  getCommodityButton.style.width = '400px';
+		}
+	</script>
+	<script src="https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json&callback=initButtonName"
     async defer></script>
 </body>
 </html>
