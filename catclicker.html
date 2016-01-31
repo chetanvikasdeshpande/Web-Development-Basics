@@ -9,40 +9,73 @@
 		height: 20px;
 		text-align: center;
 		padding: 20px;
-		margin: 20px;
+		margin: 10px;
 	}
 	img {
 		width: 640px;
 		height: 400px;
 	}
 	.catpic {
-		margin: 20px;
+		margin: 10px;
 		padding: 0px;
 		width: 640px;
 		height: 400px;
 	}
 	</style>
 	<script type="text/javascript">
-		var globalCount = 0;
-		function countClicks () {
-			var clickcount = document.getElementById('clickcount');
-			globalCount++;
-			if(clickcount) {
-				clickcount.value = globalCount;
+		var catObj = {
+			'cat1' : { 'name' : 'Fluffy', 'clickcount': 0},
+			'cat2' : { 'name' : 'Scuffy', 'clickcount': 0}
+		};
+		var countObj = {
+			'cat1' : 'clickcount1',
+			'cat2' : 'clickcount2'
+		};
+		function countClicks (catName) {
+			var countDiv = document.getElementById(countObj[catName]);
+			if(countDiv && catObj[catName]) {
+				catObj[catName].clickcount = catObj[catName].clickcount + 1;
+				countDiv.value = catObj[catName].clickcount;
 			}
 		}
 	</script>
 </head>
 <body>
-	<div>
-		Click on the Cat
-	</div>
-	<div class="catpic" onclick="countClicks()">
-		<img src="http://www.referralsaasquatch.com/assets/cute-cat.jpg">
-	</div>
-	<div>
-		<label>Click Count</label>
-		<input id="clickcount" type="text" value="0" size="40" disabled>
-	</div>
+	<table>
+		<tr>
+			<td>
+				<div id="cat1">	
+				</div>
+				<div class="catpic" onclick="countClicks('cat1')">
+					<img src="http://www.referralsaasquatch.com/assets/cute-cat.jpg">
+				</div>
+				<div>
+					<label>Click Count</label>
+					<input id="clickcount1" type="text" value="0" size="40" disabled>
+				</div>
+			</td>
+			<td>
+				<div id="cat2">	
+				</div>
+				<div class="catpic" onclick="countClicks('cat2')">
+					<img src="http://www.mycatnames.com/wp-content/uploads/2015/09/Great-Ideas-for-cute-cat-names-2.jpg">
+				</div>
+				<div>
+					<label>Click Count</label>
+					<input id="clickcount2" type="text" value="0" size="40" disabled>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		var cat1 = document.getElementById('cat1');
+		if(cat1) {
+			cat1.innerHTML = catObj['cat1'].name;
+		}
+		var cat2 = document.getElementById('cat2');
+		if(cat2) {
+			cat2.innerHTML = catObj['cat2'].name;
+		}
+	</script>
 </body>
 </html>
