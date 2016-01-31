@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat Clicker</title>
+	<style type="text/css">
+	div {
+		border: 1px solid limegreen;
+		width: 600px;
+		height: 20px;
+		text-align: center;
+		padding: 20px;
+		margin: 20px;
+	}
+	img {
+		width: 640px;
+		height: 400px;
+	}
+	.catpic {
+		margin: 20px;
+		padding: 0px;
+		width: 640px;
+		height: 400px;
+	}
+	</style>
+	<script type="text/javascript">
+		var globalCount = 0;
+		function countClicks () {
+			var clickcount = document.getElementById('clickcount');
+			globalCount++;
+			if(clickcount) {
+				clickcount.value = globalCount;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		Click on the Cat
+	</div>
+	<div class="catpic" onclick="countClicks()">
+		<img src="http://www.referralsaasquatch.com/assets/cute-cat.jpg">
+	</div>
+	<div>
+		<label>Click Count</label>
+		<input id="clickcount" type="text" value="0" size="40" disabled>
+	</div>
+</body>
+</html>
