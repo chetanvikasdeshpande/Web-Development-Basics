@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Streetview, Google Maps, Ajax, Tradingeconomics !!!
+	</title>
+	<style type="text/css">
+		body {
+			background: url("https://codecademy-content.s3.amazonaws.com/courses/web-beginner-en-3pc6w/images/splash.jpg");
+			background-size: cover;
+		}
+		.whitebgclass {
+			background: white;
+		}
+	</style>
+	<script type="text/javascript">
+		function getCommoditiesData () {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://api.tradingeconomics.com/markets/commodities?c=guest:guest");
+			xhr.send();
+			xhr.onreadystatechange = function() {
+				if(xhr.readyState === 4) {
+					var responseJson = xhr.response && JSON.parse(xhr.response);
+					var commoditydiv = document.getElementById('commoditydiv');	
+					commoditydiv.innerHTML = '<ul>';
+					for (var i = 0; i < responseJson.length; i++) {
+						commoditydiv.innerHTML = commoditydiv.innerHTML + '<li>' +
+							responseJson[i].Name + '&nbsp;' +  
+							responseJson[i].Last + '&nbsp;' + 
+							responseJson[i].DailyChange
+							+ '</li>';
+					}
+					commoditydiv.innerHTML = commoditydiv.innerHTML + '<ul>';
+					var datastatusdiv = document.getElementById('datastatusdiv');
+					datastatusdiv.innerHTML = xhr.statusText + ' (' + xhr.status + ').';
+				}
+			};
+		};
+	</script>
+</head>
+<!-- <body style="background-repeat:no-repeat;" background="https://maps.googleapis.com/maps/api/streetview?size=1024x786&location=&heading=151.78&pitch=-0.76"> -->
+<body>
+	<input 
+		style="
+		   	border-radius: 5px;
+		    margin: 10px 10px 10px 10px;
+		    padding: 20px;
+		    width: 200px;
+		    background: darkcyan;
+		    color: #fff;
+		" 
+		type="button" 
+		id="getCommodityButton" 
+		value="Get Commodities Data !" 
+		onclick="getCommoditiesData()"
+	>
+	<div class="whitebgclass" 
+		id="commoditydiv" 
+		style="
+			margin: 10px 10px 10px 10px;
+			border: 1px solid darkcyan;
+			color: brown;padding: 20px;
+			word-wrap:break-word;
+		"
+	>
+	</div>
+	<div class="whitebgclass" 
+		id="datastatusdiv" 
+		style="
+			margin: 10px 10px 10px 10px;
+			border: 1px solid darkcyan;
+			color: limegreen;
+			padding: 20px;
+		"
+	>
+	</div>
+	<div 
+		id="map" 
+		style="
+			margin: 10px 10px 10px 10px;
+			border: 1px solid darkcyan;
+			color: greenyellow;
+			padding: 20px;
+			height : 300px;
+		"
+	>
+	</div>
+	<script>
+		var map;
+		function initMap() {
+		  map = new google.maps.Map(document.getElementById('map'), {
+		    center: {lat: -34.397, lng: 150.644},
+		    zoom: 8
+		  });
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+    async defer></script>
+    <script>
+		function initButtonName(response) {
+			console.log(response);
+			// this is a type of hack called as callback which can be used to avoid cross-origin CORS 
+			// so we instruct api here to not send json but to call .js function that we response as arguments.
+			var getCommodityButton = document.getElementById('getCommodityButton');
+			getCommodityButton.value = "Use Tradingeconomics to get Commodities Data !"
+			getCommodityButton.style.width = '400px';
+		}
+	</script>
+	<script src="https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json&callback=initButtonName"
+    async defer></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat Clicker</title>
+	<style type="text/css">
+	div {
+		border: 1px solid limegreen;
+		width: 830px;
+		height: 20px;
+		text-align: center;
+		padding: 5px;
+		margin: 5px;
+	}
+	img {
+		width: 840px;
+		height: 500px;
+		margin: 5px;
+	}
+	.thumb {
+		width: 160px;
+		height: 100px;
+	}
+	.catname {	
+	    font-size: 40px;
+	    margin: 10px;
+	    font-style: italic;
+	    color: darkmagenta;
+	}
+	input {
+		margin-left: 10px;
+	}
+	body {
+		background: pink; 
+	}
+	</style>
+	<script type="text/javascript">
+		var catObj = {
+			'cat1' : { 
+				'name' : 'Fluffy', 
+				'clickcount': 0,
+				'imgurl' : 'http://www.referralsaasquatch.com/assets/cute-cat.jpg'
+			},
+			'cat2' : { 
+				'name' : 'Scuffy', 
+				'clickcount': 0,
+				'imgurl' : 'http://www.mycatnames.com/wp-content/uploads/2015/09/Great-Ideas-for-cute-cat-names-2.jpg'
+			},
+			'cat3' : { 
+				'name' : 'Muuffy', 
+				'clickcount': 0,
+				'imgurl' : 'http://cdn.cutestpaw.com/wp-content/uploads/2011/11/cute-cat.jpg'
+			},
+			'cat4' : { 
+				'name' : 'Luussy', 
+				'clickcount': 0,
+				'imgurl' : 'http://www.thedailyindia.in/wp-content/uploads/2016/01/cute-kitty-wallpapers-for-whats-app-dp.jpg'
+			},
+			'cat4' : { 
+				'name' : 'Crusty', 
+				'clickcount': 0,
+				'imgurl' : 'http://freephotos.atguru.in/hdphotos/cat-wallpapers/funny-cat.jpg'
+			}
+		};
+ 		function selectCat (catName) {
+			var catDiv = document.getElementById('cat');
+			if(catDiv && catObj[catName]) {
+				catDiv.innerHTML = '';
+				catDiv.innerHTML = catDiv.innerHTML + '<div>' + catName + '</div>';
+				catObj[catName].clickcount = catObj[catName].clickcount + 1;
+				var countDiv = '<div>' +
+					'<label>Click Count</label>' +
+					'<input type="text" value="' + catObj[catName].clickcount + '" size="10" disabled>' +
+				'</div>';
+				var catImg = '<img src="' + catObj[catName].imgurl +'">';
+				catDiv.innerHTML = catDiv.innerHTML + catImg +  countDiv;
+			}
+		};
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<p id="catlist">	
+				</p>
+			</td>
+			<td id="cat">
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		var catlist = document.getElementById('catlist');
+		var listTemplate = '';
+		var catThumb, catNm, catClick;
+		if(catlist) {
+			for (eachCat in catObj) {
+				catThumb = '<p onclick="selectCat(\'' + eachCat + '\')">' + '<img class="thumb" src="' + catObj[eachCat].imgurl + '">';
+				catNm = '<span class="catname">' + catObj[eachCat].name + '</span>';
+				listTemplate = listTemplate + catThumb + catNm + '</p>';
+			}
+			catlist.innerHTML = listTemplate;
+		}
+	</script>
+</body>
+</html>
