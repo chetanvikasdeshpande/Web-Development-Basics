@@ -1,0 +1,30 @@
+.inputcss {
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	border-color: brown;
+}
+.buttoncss {
+	width: 135px;
+    background-color: brown;
+    color: white; 
+    font-weight: bold;
+    margin-right: 0px;
+}
+.textcss {
+	color: brown;
+}
+#mainDiv {
+	height: 400px;
+	border: 2px solid brown;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+}
+.notesDiv {
+	border: 2px solid brown;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	height: 40%;
+}
