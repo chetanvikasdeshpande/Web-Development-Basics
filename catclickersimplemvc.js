@@ -1,4 +1,5 @@
 var catData = {};
+
 var initCatModel = function(){
 	catData = {
 		'cat1' : { 
@@ -37,8 +38,6 @@ var initView = function() {
 	}
 };
 
-
-
 var initController = function(args) {
 	if(args) {
 		var displaydiv = document.getElementById('displaydiv');
@@ -53,6 +52,7 @@ var initController = function(args) {
 		}
 	}
 };
+
 var onReady = function() {
 	initController();
-}
+};
