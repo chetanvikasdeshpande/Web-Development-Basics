@@ -39,7 +39,7 @@ var initView = function() {
 };
 
 var initController = function(args) {
-	if(args) {
+	if(args && catData[args]) {
 		var displaydiv = document.getElementById('displaydiv');
 		catData[args].clickcount++;
 		(function() {
