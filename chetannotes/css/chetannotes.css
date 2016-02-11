@@ -3,6 +3,7 @@
 	margin: 10px;
 	border-radius: 5px;
 	border-color: brown;
+	background-color: yellow;
 }
 .buttoncss {
 	width: 135px;
@@ -27,4 +28,7 @@
 	margin: 10px;
 	border-radius: 5px;
 	height: 40%;
+}
+body {
+	background-color: gold;
 }
