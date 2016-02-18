@@ -1,9 +1,9 @@
 .inputcss {
 	padding: 10px;
-	margin: 10px;
+	margin: 0px 10px 10px 10px;
 	border-radius: 5px;
 	border-color: brown;
-	background-color: yellow;
+	background-color: brown;
 }
 .buttoncss {
 	width: 135px;
@@ -13,22 +13,53 @@
     margin-right: 0px;
 }
 .textcss {
+	color: white;
+	font-weight: bold;
+}
+.headerDiv {
+	height: 50px;
+	
+	margin: 10px;
+	border: 2px solid brown;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 40px;
 	color: brown;
 }
 #mainDiv {
 	height: 400px;
-	border: 2px solid brown;
 	padding: 10px;
 	margin: 10px;
 	border-radius: 5px;
+}
+#warningDiv {
+	height: 40px;
+	margin: 0px 10px 0px 10px;
+	border-radius: 5px;
+	font-size: larger;
+	font-style: italic;
+	font-weight: bold;
+	color: brown;
+	vertical-align: middle;
 }
 .notesDiv {
 	border: 2px solid brown;
 	padding: 10px;
-	margin: 10px;
+	margin: 10px 10px 10px 20px;
 	border-radius: 5px;
 	height: 40%;
+	width: 20%;
+	position: relative;
+	float: left;
+	color: brown;
+}
+.notesDiv .notesText{
+	font-size: 60px;
+}
+.notesDiv .notesCount{
+	font-size: 20px;
+	vertical-align: bottom;
 }
 body {
-	background-color: gold;
+	background-color: oldlace;
 }
