@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn Bootstrap!</title>
+	<meta charset="utf-8">
+	<!-- 
+		bootstrap crates 12 colums of html stretched across the entire size of screen
+		and when the viewport size reduces / when screen size reduces the size of things in columns reduces and hence website becomes responsive
+	 -->
+	<meta name="viewport" content="width-device-width, initial-scale-1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<!-- 
+	@media : the css3 release support it try it.
+ -->
+<div class="container-fluid">
+Example of columns ! 
+<!-- 
+	class container is a fixed-width layout
+		padding 15px left and right
+		margin 30px left and right
+	class container-fluid is a full width layout
+		padding 15px left and right
+		no margin
+ -->
+	<div class="row">
+	<!-- 
+		number of columns in a row are always 12. not more that it.
+		gutter width is 30px (15px each side of column).
+
+		No.	postfixes to col- 	grid behavior		cont. width 	clmn width 
+		----------------------------------------------------------------------------
+		1	xs : extra small 	horizontal			none < 768		Auto
+		2	sm : small 			hz at breakpoint	750 >= 768		62
+		3	md : medium			hz at breakpoint	970 >= 992		81
+		4	lg : large			hz at breakpoint	1170 >= 1200	97
+
+		providing 2 classes in fluid layout is good practice.
+
+		Instead of just using 
+			class="col-md-8" use class="col-sx-12 col-md-8" 
+				or 
+			class="col-sx-12 col-sm-6 col-md-8"
+		This is for smooth mobile and desktop view.
+	 -->
+		<div class="col-md-1">
+			1
+		</div>
+		<div class="col-md-1">
+			2
+		</div>
+		<div class="col-md-1">
+			3
+		</div>
+		<div class="col-md-1">
+			4
+		</div>
+		<div class="col-md-1">
+			5
+		</div>
+		<div class="col-md-1">
+			6
+		</div>
+		<div class="col-md-1">
+			7
+		</div>
+		<div class="col-md-1">
+			8
+		</div>
+		<div class="col-md-1">
+			9
+		</div>
+		<div class="col-md-1">
+			10
+		</div>
+		<div class="col-md-1">
+			11
+		</div>
+		<div class="col-md-1">
+			12
+		</div>
+		<div class="col-md-8">
+			1*8
+		</div>
+		<div class="col-md-4">
+			1*4
+		</div>
+	</div>
+</div>
+<!-- 
+	The javascript should be loaded at the bottom of page as it may be heavy.
+	and it may defer the rendering of the page.
+	Bootstrap js uses jquery and hence you need jquery loaded before using bootstrap.
+-->
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
