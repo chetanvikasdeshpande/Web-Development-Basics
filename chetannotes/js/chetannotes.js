@@ -5,13 +5,17 @@ var onReady = function() {
 	me.controller.model = me.initModel();
 	me.controller.view = me.initView();
 
-	me.controller.view.renderDefaultView();
-
-	for (var i in me.controller.model.noteText) {
-		me.controller.view.addNote(me.controller.model.noteText[i].noteText);
-	}	
+	me.reRender();
 
 };
+
+var reRender = function() {
+	var me  = this;
+	me.controller.view.renderDefaultView();
+	for (var i in me.controller.model.noteText) {
+		me.controller.view.addNote(me.controller.model.noteText[i]);
+	}	
+}
 
 var onNoteAdd = function(noteText) {
 	var me = this;
@@ -24,9 +28,15 @@ var onNoteAdd = function(noteText) {
 		inputNotes.focus();
 	} else {
 		warningDiv.innerHTML = "";
-		warningDiv.innerHTML = "Note cannot be empty!";
+		warningDiv.innerHTML = '<div class="warningIcon"></div><div class="warningDivText">' + "Note cannot be empty!" + '</div>';
 		inputNotes.focus();
 	}
+};
+
+var onNoteDelete = function(noteCounter) {
+	var me = this;
+	me.controller.model.remove(noteCounter);
+	me.reRender();
 };
 
 var initController = function() {
@@ -53,14 +63,16 @@ var initView = function() {
 		return this;
 	};
 
-	view.prototype.getTemplate = function(arg1, arg2) {
+	view.prototype.getTemplate = function(noteText, noteTime, noteCounter) {
 		var template = 
 			'<div class="notesDiv">' +
+			'<div class="deleteButton" onclick="onNoteDelete(\'' + '' + noteCounter + '' + '\')">' +
+			'</div>' +
 			'<div class="notesText">' +
-				arg1 +
+				noteText +
 			'</div>' +
 			'<div class="notesCount">' +
-				+ arg2.getHours() + ':' + arg2.getMinutes() +
+				+ noteTime.getHours() + ':' + noteTime.getMinutes() +
 			'</div>' +
 			'</div>'
 		;
@@ -72,7 +84,7 @@ var initView = function() {
 	view.prototype.addNote = function(addObj) {
 		var mainDiv = document.getElementById('mainDiv');
 		if(mainDiv) {
-			mainDiv.innerHTML += this.getTemplate(addObj.noteText,new Date(addObj.noteTime));
+			mainDiv.innerHTML += this.getTemplate(addObj.noteText,new Date(addObj.noteTime), addObj.noteCounter);
 		}
 	};
 
@@ -102,8 +114,8 @@ var initModel = function() {
 		return addObj;
 	};
 	model.prototype.remove = function(counter) {
-		if(this.noteText.hasOwnProperty('' + this.counter)) {
-			delete this.noteText['' + this.counter];
+		if(this.noteText.hasOwnProperty(counter)) {
+			delete this.noteText['' + counter];
 		}
 	};
 	model.prototype.getData = function() {

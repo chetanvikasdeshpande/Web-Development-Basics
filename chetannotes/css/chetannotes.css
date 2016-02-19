@@ -1,30 +1,39 @@
 .inputcss {
-	padding: 10px;
 	margin: 0px 10px 10px 10px;
-	border-radius: 5px;
-	border-color: brown;
-	background-color: brown;
+	border-color: black;
+	background-color: black;
+	height: 48px;
+	border-radius: 6px;
+}
+.textboxcls {
+	float: left;
+	margin-top: 24px;
 }
 .buttoncss {
-	width: 135px;
-    background-color: brown;
-    color: white; 
+    background:  url("../assets/addnote.png") no-repeat;
     font-weight: bold;
-    margin-right: 0px;
+    margin-top: 10px;
+    border: none;
+    width: 96px;
+    height: 96px;
+	margin: 0px 0px 10px 10px;
 }
 .textcss {
 	color: white;
 	font-weight: bold;
 }
-.headerDiv {
-	height: 50px;
-	
-	margin: 10px;
-	border: 2px solid brown;
-	border-radius: 5px;
-	text-align: center;
-	font-size: 40px;
-	color: brown;
+.deleteButton {
+	float: right;
+	background:  url("../assets/delete.png") no-repeat;
+	width: 24px;
+	height: 24px;
+}
+.warningIcon {
+	float: right;
+	float: left;
+	background:  url("../assets/warning.png") no-repeat;
+	height: 48px;
+	width: 48px;
 }
 #mainDiv {
 	height: 400px;
@@ -33,17 +42,22 @@
 	border-radius: 5px;
 }
 #warningDiv {
-	height: 40px;
+	height: 50px;
 	margin: 0px 10px 0px 10px;
 	border-radius: 5px;
 	font-size: larger;
 	font-style: italic;
 	font-weight: bold;
-	color: brown;
+	color: black;
 	vertical-align: middle;
 }
+.warningDivText {
+	height: 48px;
+	vertical-align: middle;
+	padding: 10px 0px 0px 0px;
+}
 .notesDiv {
-	border: 2px solid brown;
+	border: 2px solid black;
 	padding: 10px;
 	margin: 10px 10px 10px 20px;
 	border-radius: 5px;
@@ -51,7 +65,8 @@
 	width: 20%;
 	position: relative;
 	float: left;
-	color: brown;
+	color: black;
+	background-color: grey;
 }
 .notesDiv .notesText{
 	font-size: 60px;
@@ -59,7 +74,4 @@
 .notesDiv .notesCount{
 	font-size: 20px;
 	vertical-align: bottom;
-}
-body {
-	background-color: oldlace;
 }
