@@ -39,9 +39,11 @@ Example of columns !
 		providing 2 classes in fluid layout is good practice.
 
 		Instead of just using 
-			class="col-md-8" use class="col-sx-12 col-md-8" 
-				or 
-			class="col-sx-12 col-sm-6 col-md-8"
+			class="col-md-8" 
+				use 
+				class="col-sx-12 col-md-8" for mobile and desktop
+							OR 
+				class="col-sx-12 col-sm-6 col-md-8" for mobile, tablet and desktop
 		This is for smooth mobile and desktop view.
 	 -->
 		<div class="col-md-1">
@@ -85,6 +87,528 @@ Example of columns !
 		</div>
 		<div class="col-md-4">
 			1*4
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-9">
+			1*9
+		</div>
+		<div class="col-md-4">
+			1*4! Appeared at the next line as 9+4 > 12 (Max Limit).
+		</div>
+		<div class="col-md-6">
+			1*6 of next tuple appeared here
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			This is clearfix example!
+			<br />
+			See this div is double in height
+		</div>
+		<div class="col-md-3">
+			next div
+		</div>
+		<!-- 
+			clearfix is like br tag
+			so if i want few divs in a line but not all divs then i'll add clearfix
+			if i want to give condition on cleafix i'll use visible-md-block.
+		 -->
+		<div class="clearfix visible-md-block"></div>
+		<div class="col-md-3"> 
+			This 1
+		</div>
+		<div class="col-md-3"> 
+			This 2
+		</div>
+	</div>
+	<br />
+	<div class="row bg-danger">
+		<div class="col-md-4">
+			This is column offset example using col-md offset-6
+		</div>
+		<div class="col-md-2 col-md-offset-6">
+			See offset effect!
+		</div>
+		<div class="col-md-12 bg-primary">
+			You can use 2 offset as col-md-offset-4 and col-xs-offset-0 for different device sizes
+		</div>
+	</div>
+	<br />
+	<div class="row bg-primary">
+		<div class="col-md-6">
+			<div class="row bg-danger" style="border: 1px solid black;">
+				<div class="col-md-6">
+					See nested! nested row will again have 12 coulmns
+				</div>
+				<div class="col-md-6">
+					I'm nested!
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			You can have nested rows
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-2 col-md-push-10">
+			I'm first! 
+			these need to be opposite to each other pull n push see 10 2 2 10
+		</div>
+		<div class="col-md-10 col-md-pull-2">
+			I'm second
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12 bg-primary">
+			all heading, p tags are as it is in bootstrap	
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<h1> 
+				Make column stand out by using .lead class 
+			</h1>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12 bg-info">
+			<p>
+				Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+				Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
+			</p>
+			<p class="lead">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>	
+			<p>
+				Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+			</p>
+		</div>
+	</div>
+	<br />
+	
+	<!-- 
+		color scheme	background color 
+		----------------------------------------------------------------------------
+		info  			light blue 	
+		primary 		blue 		
+		danger 			pink red
+		success 		green
+		warning 		yellow
+
+		to use on div add bg
+			bg-primary bg-info bg-success bg-warning bg-danger
+	 -->
+	<div class="row">
+		<div class="col-md-12">
+			<h1> 
+				Color Scheme
+			</h1>
+		</div>
+		<div class="col-md-4 bg-info">
+			This is info class
+		</div>
+		<div class="col-md-4 bg-success">
+			This is success class
+		</div>
+		<div class="col-md-4 bg-warning">
+			this is warning class
+		</div>
+		<div class="col-md-4 bg-primary">
+			this is primary class
+		</div>
+		<div class="col-md-4 bg-danger">
+			this is danger class
+		</div>
+	</div>
+	<br />
+	<div class="row"> 
+		<div class="col-md-12">
+			<h3>
+				Rather than using style text-aling=value use text-value class
+			</h3>
+		</div>
+		<div class="col-md-12 text-left">
+			this is at left using text-left class
+		</div>
+		<div class="col-md-12 text-center">
+			this is at center using text-center class
+		</div>
+		<div class="col-md-12 text-right">
+			this is at right using text-right class
+		</div>
+		<div class="col-md-12 text-justify">
+			this is at justify using text-justify class
+		</div>
+		<div class="col-md-12 text-nowrap">
+			this is at nowrap using text-nowrap class
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<h3>
+				This is to capital, small and uppercase
+			</h3>
+		</div>
+		<div class="col-md-12">
+			<p class="text-lowercase">
+				This text is in lower case. use .text-lowercase.
+			</p>
+			<p class="text-uppercase">
+				This text is in uppercase. use .text-uppercase
+			</p>
+			<p class="text-capitalize">
+				This text is in capital case. use .text-capitalize
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			This is <abbr title="abbr tag">abbr</abbr> tag
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-8">
+		<address class="bg-info">
+			<strong>
+				Chetan Deshpande.
+			</strong>
+			<br />
+			N - 42, JC - 2, 17 / 5 <br />
+			Raigad Chowk, CIDCO <br />
+			Nasik, <abbr title="Indian State">Maharashtra.</abbr>
+			<br />
+			<strong>
+				Email: 
+			</strong>
+			<a href="mailto:chetanvikasdeshpande@gmailcom">chetanvikasdeshpande@gmail.com</a>
+		</address>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<h3>
+				Following is the example of blockquote tag and .blockquote-reverse
+			</h3>
+			<blockquote>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<footer>
+					The mindful analyst 
+						<cite title="CVD">
+							Chetan Deshpande
+						</cite> 
+				</footer>
+			</blockquote>
+			<h3>
+				Now the right aligned blockquote using .blockquote-reverse
+			</h3>
+			<blockquote class="blockquote-reverse">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<footer>
+					The mindful analyst
+					<cite title="CVD"> Chetan Deshpande</cite>
+				</footer>
+			</blockquote>
+		</div>
+	</div>
+	<br />
+	<h2 class="bg-info">
+	display:inline-block on list tag ul or ol results into list in one line
+	</h2>
+	<ul class="list-unstyled">
+		<li>
+			This is
+		</li>
+		<li>
+			an unstyled
+		</li>
+		<li>
+			list using .list-unstyled
+		</li>
+	</ul>
+	<ol class="list-inline">
+		<li>
+			This is
+		</li>
+		<li>
+			an inline
+		</li>
+		<li>
+			list using .list-inline ! also notice this is ol but no numbers :(
+		</li>
+	</ol>
+	<h2 class="bg-info">
+	There are description list just like ul and ol.
+	<br />
+	To use them us dl tag and insite it dt {description title} tag and dd tag {description details} + use .dl-horizontal if you want them horizontally. 
+	</h2>
+	<dl>
+		<dt>
+			Yolo
+		</dt>
+		<dd>
+			You only live once
+		</dd>
+		<dt>
+			RHCH
+		</dt>
+		<dd>
+			Red hot chillie peppers
+		</dd>
+	</dl>
+	<dl class="dl-horizontal">
+		<dt>
+			yolo
+		</dt>
+		<dd>
+			you only live once
+		</dd>
+		<dt>
+			RHCH		
+		</dt>
+		<dd>
+			Red hot chillie peppers
+		</dd>
+	</dl>
+	<h3 class="bg-info">
+	code tag and kbd tag and samp tag { samp is used for sample output}
+	</h3>
+	<code>
+		&lt;html&gt;
+		<code>
+			&lt;body&gt;
+		</code>
+		<code>
+			&lt;/body&gt;
+		</code>
+		<code>
+			&lt;/html&gt;
+		</code>
+	</code>
+	<p class="lead">
+		use the <kbd>ctrl</kbd> to do it. this is an example of <code>&lt;kbd&gt;</code>
+	</p>
+	<p class="lead">
+		<samp>
+			This is <code>&lt;samp&gt;</code> example. <br />The machine count is 100. You are logged in using *** *** *92.
+		</samp>
+	</p>
+	<!-- 
+		.table class for default style
+		.table-striped for stripes 
+		.table-bordered for borders
+		.table-hover for row change color on hover
+		.table-condensed for compact
+
+		apply following to div outside table
+		.table-responsive 
+
+		tr or td classes
+			.active grey background
+			.success 
+			.danger
+			.warning
+			.info
+	 -->
+	<div class="row table-responsive">
+		<table class="table table-hover">
+			<tr class="active">
+				<th>
+					Serial Number
+				</th>
+				<th>
+					Name
+				</th>
+			</tr>
+			<tr>
+				<td class="success">
+					1
+				</td>
+				<td>
+					Chetan Deshpande
+				</td>
+			</tr>
+			<tr>
+				<td class="danger">
+					2
+				</td>
+				<td>
+					Vikas Deshpande
+				</td>
+			</tr>
+		</table>
+	</div>
+	<br />
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1>
+				This is form example! main classes are .form-group, .form-control, .checkbox etc.
+			</h1>
+			<h3>
+				.form-group is for div outside input tag <br />
+				.form-control is class to input tag and can be used with col-md-*<br />
+				.checkbox is for div outside input checkbox<br />
+				please use <code>&lt;label&gt;</code> outside input type checkbox.<br />
+				.btn is for button types are as follows <br />
+				.btn .btn-primary<br />
+				.btn .btn-warning<br />
+				.btn .btn-danger<br />
+				.btn .btn-info<br />
+				.btn .btn-success<br />
+				.btn .btn-default<br />
+				.btn .btn-link<br />
+				following are the button sizes <br />
+				.btn-lg <br />
+				.btn-sm <br />
+				.btn-xs <br />
+				.btn-block <br />
+				.btn-default <br />
+				give active just like disabled at the end of button tag to focus it <br />
+				if you want 1 liner form use class="form-inline" in form tag.<br />
+				if you want column structure use class="form-horizontal" tag but with col-md to the input tags.
+			</h3>
+		</div>
+		<form>
+			<div class="form-group">
+				<label>Enter your name</label>
+				<input type="text" class="form-control"></input>
+			</div>
+			<div class="form-group">
+				<label>Enter your age</label>
+				<input type="password" class="form-control"></input>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox"></input> Check me out!	
+				</label>
+			</div>
+			<input type="button" class="btn btn-primary" value="Click me!"></input>
+		</form>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<h1> Combobox and list in html are doun using select tag</h1>
+			<h3> Use select tag and option tag inside it. if you want multiselct use multiple attr inside select tag</h3>
+		</div>
+		<div class="col-md-6">
+			<select class="form-control">
+				<option>
+					Chetan
+				</option>
+				<option>
+					Vikas
+				</option>
+				<option>
+					Deshpande
+				</option>
+			</select>
+		</div>
+		<div class="col-md-6">
+			<select multiple class="form-control">
+				<option>
+					Chetan
+				</option>
+				<option>
+					Vikas
+				</option>
+				<option>
+					Deshpande
+				</option>
+			</select>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<h1>
+				Button can be used using <br />
+				<code>&lt;button&gt;</code> <br />
+				<code>&lt;input&gt;</code> with type as button <br />
+				now the button has type as button and submit.
+				submit type  submits the form. <br />
+				if there is any json it serializes it.
+			</h1>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<p class="text-success lead">
+				This is example of .text-success
+			</p>
+		</div>
+		<div class="col-md-12">
+			<p class="text-danger lead">
+				This is example of .text-danger
+			</p>
+		</div>
+		<div class="col-md-12">
+			<p class="text-warning lead">
+				This is example of .text-warning
+			</p>
+		</div>
+		<div class="col-md-12">
+			<p class="text-info lead">
+				This is example of .text-info
+			</p>
+		</div>
+		<div class="col-md-12">
+			<p class="text-primary lead">
+				This is example of .text-primary
+			</p>
+		</div>
+		<div class="col-md-12">
+			<p class="text-muted lead">
+				This is example of .text-muted
+			</p>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<h1 class="bg-info">
+			decrese the size of browser and see how .img-responsive applied on img tag works <br />
+			also use .img-rounded, .img-circle, .img-thumbnail
+		</h1>
+		<div class="col-md-12">
+			<img src="./assets/HCI.png" class="img-responsive">
+		</div>
+		<div class="col-md-12">
+			<img src="./assets/HCI.png" class="img-responsive img-rounded">
+		</div>
+		<div class="col-md-12">
+			<img src="./assets/HCI.png" class="img-responsive img-circle">
+		</div>
+		<div class="col-md-12">
+			<img src="./assets/HCI.png" class="img-responsive img-thumbnail">
 		</div>
 	</div>
 </div>
